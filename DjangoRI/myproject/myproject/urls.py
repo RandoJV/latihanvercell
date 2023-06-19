@@ -19,7 +19,7 @@ from django.urls import include, path
 from myapp.views import AlbumView, TrackView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
-    TokenRefreshView,
+    TokenRefreshView,   
     TokenVerifyView
 )
 
@@ -33,5 +33,5 @@ urlpatterns = [
     path('api/albums/<int:album_pk>/tracks/', TrackView.as_view(), name='track-list'),
     path('api/albums/<int:album_pk>/tracks/<int:track_pk>/', TrackView.as_view(), name='track-detail'),
     path('chat/', include('chat.urls')), 
-    path('', include('myapp.urls')),
+    path('/', include('myapp.urls')),
 ]
